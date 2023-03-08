@@ -10,6 +10,7 @@ env:
   SECRET: ${{ secrets.SECRET }}
   EXPIRATION_TIME: ${{ secrets.EXPIRATION_TIME }}
 
+
 jobs:
   deploy:
     name: DEPLOY
