@@ -69,7 +69,8 @@ jobs:
           COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://ringcardbucket/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://ringcabucket/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name ringcard --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name ringcard-deploy --s3-location bucket=ringcard-deploy,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name Ringca --deployment-config-name dev CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=
+ringcabucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
