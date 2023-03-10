@@ -73,4 +73,4 @@ jobs:
 
 
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name RingCa_deploy_2 --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=ringcabucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name RingCa --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=ringcabucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
