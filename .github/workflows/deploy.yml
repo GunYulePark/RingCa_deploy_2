@@ -34,17 +34,14 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
-        working-directory: ${{ env.working-directory }}
         shell: bash
 
 #      - name: gradle wrapper
 #        run: gradle wrapper --gradle-version 7.5
-#        working-directory: ${{ env.working-directory }}
 #        shell: bash
 
       - name: Build with Gradle
         run: gradle build
-        working-directory: ${{ env.working-directory }}
         shell: bash
 
       - name: Make zip file
