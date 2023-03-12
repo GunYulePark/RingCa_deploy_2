@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-REPOSITORY=/opt/Ringca
+REPOSITORY=/opt/testapp
 cd $REPOSITORY
 
-APP_NAME=RingCa_deploy_2
+APP_NAME=action_codedeploy
 JAR_NAME=$(ls $REPOSITORY/build/libs/ | grep '.jar' | tail -n 1)
 JAR_PATH=$REPOSITORY/build/libs/$JAR_NAME
 
