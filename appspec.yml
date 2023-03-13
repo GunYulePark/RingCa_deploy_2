@@ -3,9 +3,9 @@ os: linux
 
 files:
   - source: /
-    destination: /opt/testapp
+    destination: /opt/ringca-app
 permissions:
-  - object: /opt/testapp/
+  - object: /opt/ringca-app/
     owner: ubuntu
     group: ubuntu
     mode: 755
