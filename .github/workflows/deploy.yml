@@ -13,7 +13,7 @@ env:
 jobs:
   deploy:
     name: DEPLOY
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
       
     steps:
       - name: Checkout
@@ -66,7 +66,7 @@ jobs:
           COOKIE_NAME: ${{ secrets.COOKIE_NAME }}
 
       - name: Upload to S3
-        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://ringca-deploy-mirror/$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws s3 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://ringcabucket/$PROJECT_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
-        run: aws deploy create-deployment --application-name "testapp" --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=ringca-deploy-mirror,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
+        run: aws deploy create-deployment --application-name ringca-app --deployment-config-name CodeDeployDefault.OneAtATime --deployment-group-name dev --s3-location bucket=ringcabucket,bundleType=zip,key=$PROJECT_NAME/$GITHUB_SHA.zip
