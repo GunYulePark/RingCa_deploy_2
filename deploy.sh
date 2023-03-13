@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-REPOSITORY=/opt/testapp
+REPOSITORY=/opt/ringca-app
 cd $REPOSITORY
 
 APP_NAME=action_codedeploy
